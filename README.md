@@ -1,16 +1,66 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## NexusTask - Frontend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🌌 **NexusTask** is a high-performance task management ecosystem designed for developers who value speed, structure, and a clean user interface. Built as a modern Single Page Application (SPA), it provides a seamless experience for organizing workflows, tracking deadlines, and managing project lifecycles.
 
-## React Compiler
+### 🚀 Core Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Smart Prioritization:** Categorize tasks into Low, Medium, and High priority with real-time color coding (Emerald, Amber, and Rose).
+- **Soft Delete & Recovery:** Move tasks to a "Trash" view to prevent accidental data loss, with the ability to restore or permanently delete items.
+- **Optimistic UI:** Experience zero-latency updates when filtering or toggling task status from "Pending" to "Completed." 
+- **Paginated Interface:** A structured two-column grid that displays 4 tasks per page to ensure high performance and scannability.
+- **Secure Auth:** Fully integrated with Laravel Sanctum for rock-solid, token-based authentication.
 
-## Expanding the ESLint configuration
+### 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Framework:** React.js (Vite Template)
+- **Styling:** Tailwind CSS
+- **State & Logic:** Functional Components & Hooks (`useState`, `useEffect`)
+- **API Client:** Axios
+- **Icons:** Heroicons / Lucide-React
+
+### 📥 Installation & Setup
+
+Follow these steps to get the frontend environment running locally.
+
+1. Clone the Repository
+
+```bash
+git clone https://github.com/vishmithSuranjaya/nexustask-frontend.git
+cd nexustask-frontend
+```
+
+2. Install Dependencies
+
+```bash
+npm install
+```
+
+3. Environment Configuration
+
+Create a `.env` file in the root directory and point it to your Laravel backend:
+
+```text
+VITE_API_BASE_URL=http://127.0.0.1:8000/api
+```
+
+4. Start Development Server
+
+```bash
+npm run dev
+```
+
+The application will be available at http://localhost:5173.
+
+### 🏗️ Project Structure
+
+- `src/Components/`: Reusable UI elements like Navbar, Modal, and TaskCard.
+- `src/Pages/`: Top-level views including Homepage, About, and Tasks.
+- `src/App.jsx`: Main routing and authentication state management.
+
+### 🛡️ Security Note
+
+This frontend expects a valid Sanctum Bearer Token stored in `localStorage` under the key `ACCESS_TOKEN`. Ensure the Laravel backend is running and migrations are migrated with `softDeletes` enabled to support the trash functionality.
+
+Developed by Vishmith Suranjaya — Undergraduate Student at Uva Wellassa University
